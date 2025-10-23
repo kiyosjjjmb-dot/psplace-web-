@@ -1,27 +1,899 @@
-body {
+/* RESET */
+* {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background-color: #111;
-  color: #fff;
-  scroll-behavior: smooth;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  line-height: 1.6;
+  color: #222;
+  background: #ffffff;
+  overflow-x: hidden;
+}
+
+/* WARNA UTAMA */
+:root {
+  --primary: #1E3A8A;   /* biru BYU cerah */
+  --accent: #FBBF24;    /* kuning lembut */
+  --section-bg: #f8f9fb;
+}
+
+/* HEADER */
 header {
-  background: rgba(0,0,0,0.6);
-  padding: 15px 0;
-  position: fixed;
-  width: 100%;
-  z-index: 1000;
+  background: #fff;
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+  padding: 18px 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
+
+header .container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: var(--primary);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, #e7edff 0%, #ffffff 100%);
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 25px;
+}
+
 .btn {
-  background-color: #ffb300;
-  color: #000;
-  padding: 10px 25px;
+  background: var(--primary);
+  color: #fff;
+  padding: 12px 28px;
+  font-size: 1rem;
   border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+  background: #142b66;
+  transform: translateY(-2px);
+}
+
+/* FEATURES */
+.features {
+  background: var(--section-bg);
+  padding: 70px 0;
+}
+
+.features .container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.feature-item {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+}
+
+.feature-item img {
+  width: 60px;
+  margin-bottom: 15px;
+}
+
+.feature-item h3 {
+  color: var(--primary);
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+/* BOOKING */
+.booking {
+  padding: 80px 0;
+  background: #fff;
+}
+
+.booking .container {
+  width: 90%;
+  max-width: 600px;
+  margin: auto;
+  background: var(--section-bg);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.booking h2 {
+  text-align: center;
+  color: var(--primary);
+  margin-bottom: 25px;
+}
+
+.booking form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.booking form input,
+.booking form select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.booking form button {
+  width: 100%;
+  padding: 12px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.booking form button:hover {
+  background: #142b66;
+}
+
+/* FOOTER */
+footer {
+  background: var(--primary);
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+}
+
+/* ANIMASI */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 1s forwards;
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2.1rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  nav ul {
+    gap: 12px;
+  }
+}
+/* STATUS KETERSEDIAAN ROOM */
+.availability {
+  margin: 10px 0 20px;
+  font-weight: 600;
+  padding: 10px 15px;
+  border-radius: 6px;
+  display: none;
+}
+
+.availability.available {
+  background: #e0ffe4;
+  color: #176b32;
+  border: 1px solid #65c66d;
+  display: block;
+}
+
+.availability.unavailable {
+  background: #ffe5e5;
+  color: #a12b2b;
+  border: 1px solid #ff7676;
+  display: block;
+}
+body {
+  font-family: Poppins, sans-serif;
+  background: #f8f8f8;
+  padding: 2rem;
+}
+
+form {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: auto;
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+button {
+  background: #00a2ff;
+  color: white;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:disabled {
+  background: #b5b5b5;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background: #0088d6;
+}
+
+.availability {
+  margin-top: 1rem;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-align: center;
+  display: none;
+}
+
+.available {
+  background: #eaffea;
+  color: #007000;
+}
+
+.unavailable {
+  background: #ffeaea;
+  color: #a00000;
+}
+
+.judul {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+#submitBtn {
+  background: #888;
+  color: #fff;
+  cursor: not-allowed;
+  border: none;
+  padding: 12px 20px;
   border-radius: 8px;
+  transition: 0.3s;
+}
+
+#submitBtn.active {
+  background: #007bff;
   cursor: pointer;
 }
-footer {
-  background: #000;
+
+#submitBtn.active:hover {
+  background: #0056d4;
+}
+
+.availability {
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.availability.loading {
+  color: #555;
+  font-style: italic;
+}
+
+.availability.available {
+  color: green;
+}
+
+.availability.unavailable {
+  color: red;
+}
+
+/* 🔄 Spinner animasi */
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ccc;
+  border-top-color: #007bff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* 🔄 Spinner animasi */
+/* ===== GLOBAL ===== */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* ===== PARALLAX SECTIONS ===== */
+.parallax {
+  position: relative;
+  background-image: url('img/hero-bg.jpg'); /* ubah sesuai gambar kamu */
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.parallax .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+.hero-content {
+  z-index: 2;
   text-align: center;
+  animation: fadeUp 1.2s ease;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+.btn {
+  background: #007bff;
+  border: none;
+  color: white;
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: #0056d4;
+}
+
+/* ===== PARALLAX SECTIONS GENERIC ===== */
+.parallax-section {
+  padding: 80px 20px;
+  text-align: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+#features {
+  background-image: url('img/features-bg.jpg');
+}
+
+#booking {
+  background-image: url('img/booking-bg.jpg');
+}
+
+#contact {
+  background-image: url('img/footer-bg.jpg');
+  position: relative;
+}
+
+.overlay-dark {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.75);
+}
+
+/* ===== CONTAINERS ===== */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* ===== TEXT EFFECTS ===== */
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.feature-list {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.feature-item {
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px;
   padding: 20px;
+  width: 280px;
+  color: #fff;
+  backdrop-filter: blur(6px);
+  transition: 0.3s;
+}
+.feature-item:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* ===== FORM STYLING ===== */
+form {
+  background: rgba(255,255,255,0.9);
+  color: #000;
+  padding: 25px;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: auto;
+  backdrop-filter: blur(8px);
+}
+
+input, select, button {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button#submitBtn {
+  background: #888;
+  color: #fff;
+  cursor: not-allowed;
+  transition: 0.3s;
+}
+button#submitBtn.active {
+  background: #007bff;
+  cursor: pointer;
+}
+button#submitBtn.active:hover {
+  background: #0056d4;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* 🎮 Parallax Style */
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.hero.parallax {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-blend-mode: overlay;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.features.parallax {
+  padding: 100px 0;
+  background-blend-mode: overlay;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.booking {
+  background: #f9f9f9;
+  color: #333;
+}
+/* === FOOTER FIX === */
+footer {
+  position: relative;
+  z-index: 10;
+  background: #1E3A8A; /* warna biru dari tema kamu */
+  color: #fff;
+  text-align: center;
+  padding: 25px 0;
+  font-size: 0.95rem;
+}
+
+footer p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+footer a {
+  color: #FBBF24; /* kuning lembut */
+  text-decoration: none;
+  font-weight: 500;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+/* ===== Layout Booking + Gallery ===== */
+.booking-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
+  padding: 60px 8%;
+  flex-wrap: wrap;
+}
+
+/* Form di kiri */
+.booking-form {
+  flex: 1;
+  min-width: 350px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Galeri di kanan */
+.gallery-slider {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.gallery-card {
+  width: calc(50% - 0.5rem);
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-card:hover {
+  transform: scale(1.05);
+}
+
+/* Responsif untuk mobile */
+@media (max-width: 900px) {
+  .booking-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gallery-slider {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .gallery-card {
+    width: 48%;
+  }
+}
+.benefit-section {
+  padding: 80px 20px;
+  background: var(--section-bg);
+  text-align: center;
+}
+.benefit-header .benefit-label {
+  display: block;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+.benefit-header .benefit-title {
+  font-size: 2.4rem;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+.benefit-header .benefit-intro {
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 30px;
+}
+.benefit-item {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.benefit-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+.benefit-item img {
+  width: 56px;
+  margin-bottom: 18px;
+}
+.benefit-item h3 {
+  font-size: 1.2rem;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+.benefit-item p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Responsif */
+@media (max-width: 600px) {
+  .benefit-header .benefit-title {
+    font-size: 1.8rem;
+  }
+  .benefit-item {
+    padding: 20px;
+  }
+}
+/* Modal overlay background */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal box */
+.modal-content {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 2rem;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 700px;
+  color: #fff;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Header text */
+.modal-content h2 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.modal-desc {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+}
+
+/* Table style */
+.pricelist-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.pricelist-table th, .pricelist-table td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  text-align: center;
+}
+
+.pricelist-table th {
+  color: #00ffcc;
+  text-transform: uppercase;
+}
+
+/* Close button */
+.close-modal {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+  color: #fff;
+  opacity: 0.8;
+}
+.close-modal:hover {
+  opacity: 1;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Navbar (contoh sederhana) */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+.navbar a:hover {
+  color: #00ffcc;
+}
+/* cek harga otomatis */
+.price-info {
+  margin-top: 12px;
+  font-size: 1rem;
+  background: #cecece;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border-left: 10px solid #860686;
+  display: none;
+  transition: 0.3s ease;
+}
+.price-info small {
+  color: #666;
+  font-size: 0.85rem;
+}
+/* fungsi pesanan kewa */
+.wa-btn {
+  display: inline-block;
+  background-color: #25d366;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.wa-btn:hover {
+  background-color: #1ebc57;
+}
+.admin-section {
+  margin: 40px auto;
+  max-width: 800px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.admin-section h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.admin-section table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.admin-section th {
+  background: #f0f0f0;
+}
+.admin-section td, .admin-section th {
+  text-align: center;
+}
+.admin-section button.hapus {
+  background: #d9534f;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.admin-section button.hapus:hover {
+  background: #c9302c;
 }
