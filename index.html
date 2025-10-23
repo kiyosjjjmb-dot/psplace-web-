@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- ===== HEADER ===== -->
   <header class="fade-in">
     <div class="container">
       <div class="logo">🎮 PS Place</div>
@@ -21,129 +20,18 @@
     </div>
   </header>
 
-  <!-- ===== HERO SECTION ===== -->
-  <section class="hero parallax fade-in" style="background-image: url('img/bg-hero.jpg');">
+  <section class="hero fade-in" style="background-image: url('img/bg-hero.jpg');">
     <div class="container">
-      <h1 class="slide-up">Main PS &amp; Nongkrong Seru!</h1>
-      <p class="slide-up">Tempat nyaman, game lengkap, dan harga bersahabat. Yuk, pesan sekarang!</p>
-      <button class="btn slide-up" id="pesanBtn">Pesan Sekarang</button>
+      <h1>Main PS & Nongkrong Seru!</h1>
+      <p>Tempat nyaman, game lengkap, dan harga bersahabat. Yuk, pesan sekarang!</p>
+      <button class="btn" id="pesanBtn">Pesan Sekarang</button>
     </div>
   </section>
 
-  <!-- ===== FEATURES SECTION ===== -->
-  <section id="features" class="features parallax" style="background-image: url('img/bg-features.jpg');">
-    <div class="container">
-      <div class="feature-item fade-in">
-        <img src="img/console.png" alt="Console" />
-        <h3>Game & Konsol Lengkap</h3>
-        <p>PlayStation terbaru, banyak pilihan game populer, dan VR seru!</p>
-      </div>
-      <div class="feature-item fade-in">
-        <img src="img/sofa.png" alt="Ruang Nyaman" />
-        <h3>Ruang Nyaman & AC</h3>
-        <p>Ruangan bersih, kursi empuk, dan suasana santai untuk main bareng teman.</p>
-      </div>
-      <div class="feature-item fade-in">
-        <img src="img/promo.png" alt="Promo" />
-        <h3>Harga Terjangkau & Promo</h3>
-        <p>Paket hemat, promo komunitas, dan diskon pelanggan tetap setiap minggu!</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== BENEFIT SECTION ===== -->
-  <section class="benefit-section fade-in">
-    <div class="container">
-      <div class="benefit-header">
-        <span class="benefit-label">Benefit Point</span>
-        <h2 class="benefit-title">Kenapa Memilih Kami?</h2>
-        <p class="benefit-intro">Kami menyediakan layanan terbaik dengan pengalaman main PS yang maksimal untuk Anda dan teman‐teman.</p>
-      </div>
-      <div class="benefit-grid">
-        <div class="benefit-item">
-          <img src="img/icon-terawat.png" alt="Unit Sewa Terawat">
-          <h3>Unit Sewa Terawat</h3>
-          <p>Semua konsol dan ruangan selalu dirawat dan diperiksa agar Anda mendapatkan pengalaman terbaik.</p>
-        </div>
-        <div class="benefit-item">
-          <img src="img/icon-ketentuan.png" alt="Ketentuan Jelas">
-          <h3>Ketentuan Jelas</h3>
-          <p>Harga transparan, waktu jelas, tanpa biaya tersembunyi — Anda tahu apa yang dibayar.</p>
-        </div>
-        <div class="benefit-item">
-          <img src="img/icon-layanan.png" alt="Layanan Handal">
-          <h3>Layanan Handal</h3>
-          <p>Tim kami siap membantu kapan saja — dari pemesanan sampai selesai bermain.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== BOOKING SECTION ===== -->
-  <section id="booking" class="booking parallax-section">
-    <div class="booking-wrapper fade-in">
-      
-      <!-- ===== FORM PEMESANAN ===== -->
-      <div class="booking-form">
-        <h2>Form Pemesanan</h2>
-        <form id="bookingForm">
-          <label for="name">Atas Nama</label>
-          <input type="text" id="name" name="name" placeholder="Masukkan nama pemesan" required />
-
-          <label for="date">Hari / Tanggal</label>
-          <input type="date" id="date" name="date" required />
-
-          <label for="start">Jam Mulai</label>
-          <input type="time" id="start" name="start" required />
-
-          <label for="duration">Durasi Main</label>
-          <select id="duration" name="duration" required>
-            <option value="">Pilih Durasi</option>
-            <option value="1">1 Jam</option>
-            <option value="2">2 Jam</option>
-            <option value="3">3 Jam</option>
-            <option value="4">4 Jam</option>
-          </select>
-
-          <label for="console">Jenis Konsol</label>
-          <select id="console" name="console" required>
-            <option value="">Pilih Konsol</option>
-            <option value="PS4">PS4</option>
-            <option value="PS5">PS5</option>
-          </select>
-
-          <label for="room">Pilihan Room</label>
-          <select id="room" name="room" required>
-            <option value="">Pilih Room</option>
-          </select>
-
-          <div id="availability" class="availability"></div>
-
-          <button type="submit" id="submitBtn" disabled>Kirim Pemesanan</button>
-        </form>
-      </div>
-
-      <!-- ===== GALLERY SLIDER ===== -->
-      <div class="gallery-slider">
-        <div class="gallery-card"><img src="img/room-vip.jpg" alt="Room VIP"></div>
-        <div class="gallery-card"><img src="img/room-standard.jpg" alt="Room Standard"></div>
-        <div class="gallery-card"><img src="img/room-classic.jpg" alt="Room Classic"></div>
-        <div class="gallery-card"><img src="img/room-deluxe.jpg" alt="Room Deluxe"></div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ===== FOOTER ===== -->
   <footer>
     <p>© 2025 PS Place | Semua hak cipta dilindungi.</p>
-    <p>Follow kami di 
-      <a href="#">Instagram</a> • 
-      <a href="#">Facebook</a>
-    </p>
   </footer>
 
-  <!-- ===== SCRIPT ===== -->
   <script src="booking/data-booking.js"></script>
   <script src="script.js"></script>
 </body>
